@@ -1,4 +1,4 @@
-package pjrLeituraEscrita;
+package agenda;
 
 import java.util.Scanner;
 import PrincipalEscritaArquivo;

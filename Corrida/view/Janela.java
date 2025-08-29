@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.text.StyledEditorKit.BoldAction;
 
-import control.CarroThread;
+import control.OnibusThread;
 
 @SuppressWarnings("serial")
 public class Janela extends JFrame implements ActionListener {
@@ -21,9 +21,9 @@ public class Janela extends JFrame implements ActionListener {
     private JButton btnCancel;
     private JLabel lblPista;
     private JLabel lblVelocimetro;
-    private ImageIcon imgCarro1;
-    private ImageIcon imgCarro2;
-    private ImageIcon imgCarro3;
+    private ImageIcon imgOnibus1;
+    private ImageIcon imgOnibus2;
+    private ImageIcon imgOnibus3;
     private ImageIcon pista;
     private ImageIcon velocimetro;
     private Boolean started = false;
@@ -56,10 +56,10 @@ public class Janela extends JFrame implements ActionListener {
                   // POSIONADO OS BOT�ES
         this.btnCorrida.setBounds(500, 550, 120, 50);
         this.btnCancel.setBounds(640, 550, 120, 50);
-                    // INSERINDO AS IMAGENS DOS CARROS
-        imgCarro1 = new ImageIcon("./src/imagens/c1.png");
-        imgCarro2 = new ImageIcon("./src/imagens/c2.png");
-        imgCarro3 = new ImageIcon("./src/imagens/c3.png");
+                    // INSERINDO AS IMAGENS DOS OnibusS
+        imgOnibus1 = new ImageIcon("./imagens/b1.png");
+        imgOnibus2 = new ImageIcon("./imagens/b2.png");
+        imgOnibus3 = new ImageIcon("./imagens/b3.png");
        
         this.lblPista.add(btnCorrida);
         this.lblPista.add(btnCancel);
@@ -73,28 +73,28 @@ public class Janela extends JFrame implements ActionListener {
         jPanel.setSize(300, 70);
         jPanel.setLayout(null);
         jPanel.setLocation(970, 510);
-        jPanel.setBorder(BorderFactory.createTitledBorder("Daniel do Amaral Brascher"));
+        jPanel.setBorder(BorderFactory.createTitledBorder("Caio e Derek"));
         jPanel.setVisible(true);
 
         this.repaint();
 
     }
-     // INSERINDO AS JLABELS DOS CARROS
-     public JLabel JLabelCarros(String nome, ImageIcon img, int posX, int posY) {
-        CarroThread carro = new CarroThread(nome, img, posX, posY);
-        carro.setSize(256, 141);
-        carro.setVisible(true);
-        this.add(carro);
-        return carro;
+     // INSERINDO AS JLABELS DOS OnibusS
+     public JLabel JLabelOnibuss(String nome, ImageIcon img, int posX, int posY) {
+        OnibusThread Onibus = new OnibusThread(nome, img, posX, posY);
+        Onibus.setSize(256, 141);
+        Onibus.setVisible(true);
+        this.add(Onibus);
+        return Onibus;
     }
           // PROGRAMANDO A A��O DOS BOT�ES
     @Override
     public void actionPerformed(ActionEvent dispara) {
         if (dispara.getSource() == this.btnCorrida && !started) {
             started = true;
-            this.lblPista.add(JLabelCarros("Caminhão 1", imgCarro1, 0, 50));
-            this.lblPista.add(JLabelCarros("Caminhão 2", imgCarro2, 0, 200));
-            this.lblPista.add(JLabelCarros("Caminhão 3", imgCarro3, 0, 350));
+            this.lblPista.add(JLabelOnibuss("Ônibus 1", imgOnibus1, 0, 50));
+            this.lblPista.add(JLabelOnibuss("Ônibus 2", imgOnibus2, 0, 200));
+            this.lblPista.add(JLabelOnibuss("Ônibus 3", imgOnibus3, 0, 350));
         }
         if (dispara.getSource() == this.btnCancel) {
             System.exit(0);

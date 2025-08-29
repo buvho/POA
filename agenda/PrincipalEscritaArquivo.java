@@ -1,4 +1,4 @@
-package pjrLeituraEscrita;
+package agenda;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class PrincipalEscritaArquivo {
     public static void EscreverArquivo(Scanner sc) {
         try {
-            FileWriter escrita = new FileWriter("agenda.txt", true); // true = acrescenta no arquivo
+            FileWriter escrita = new FileWriter("agenda.txt", true);
             BufferedWriter bwEscrita = new BufferedWriter(escrita);
 
             System.out.println("----- Cadastro de Contato -----");

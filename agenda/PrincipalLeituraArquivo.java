@@ -1,4 +1,4 @@
-package pjrLeituraEscrita;
+package agenda;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
